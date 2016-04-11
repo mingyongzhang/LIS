@@ -1,0 +1,25 @@
+<html> 
+
+ 
+
+<title>Hello Velocity</title> 
+
+ 
+
+       <body> 
+
+ 
+
+         Welcome $name to Josh_Persistence.blog! 
+
+ 
+
+         today is $date. 
+
+ 
+
+       </body> 
+
+ 
+
+</html>

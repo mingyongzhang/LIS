@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mlf.mapper.UserInfoMapper">
+	<resultMap id="userInfoMapper" type="UserInfo">
+		<id property="userId" column="userId" />
+		<result property="userName" column="userName" />
+		<result property="password" column="password" />
+		<result property="sex" column="sex" />
+		<result property="email" column="email" />
+	</resultMap>
+
+	<select id="getUserInfoById" parameterType="String" resultMap="userInfoMapper">
+		select * from user where userid=#{param1}
+	</select>
+
+	<select id="getUserInfoList" resultMap="userInfoMapper">
+		select * from user
+	</select>
+
+	<insert id="insertUser" parameterType="userInfo">
+		insert into user(userId,userName,password,sex,email)
+		values(#{userEntity.userId},#{userEntity.userName},#{userEntity.password},#{userEntity.sex},#{userEntity.email})
+	</insert>
+
+</mapper>
