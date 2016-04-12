@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mlf.entity.UserInfo;
 import com.mlf.mapper.UserInfoMapper;
-import com.mlf.service.IUserService;
+import com.mlf.service.UserService;
 
 /**
  * 用户信息业务逻辑操作接口实现
@@ -14,7 +14,7 @@ import com.mlf.service.IUserService;
  * @author MINGYONGZHANG
  *
  */
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserInfoMapper userInfoMapper;
@@ -28,7 +28,7 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public UserInfo getUserInfoById(int userId) {
+	public UserInfo getUserInfoById(String userId) {
 		return this.userInfoMapper.getUserInfoById(userId);
 	}
 
@@ -37,11 +37,11 @@ public class UserServiceImpl implements IUserService {
 		return this.userInfoMapper.getUserInfoList();
 	}
 
-	@Override
-	public UserInfo insertUserEntity(UserInfo userInfo) {
-		this.userInfoMapper.insertUser(userInfo);
-
-		return getUserInfoById(userInfo.getUserId());
-	}
+//	@Override
+//	public UserInfo insertUserEntity(UserInfo userInfo) {
+//		this.userInfoMapper.insertUser(userInfo);
+//
+//		return getUserInfoById(userInfo.getUserId());
+//	}
 
 }

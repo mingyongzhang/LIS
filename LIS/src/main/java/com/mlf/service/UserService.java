@@ -1,20 +1,20 @@
-package com.mlf.mapper;
+package com.mlf.service;
 
 import java.util.List;
 
 import com.mlf.entity.UserInfo;
 
 /**
- * 用户信息接口
+ * 用户信息业务逻辑操作接口
  * 
  * @author MINGYONGZHANG
  *
  */
-public interface UserInfoMapper {
+public interface UserService {
 
 	UserInfo getUserInfoById(String userId);
 
 	List<UserInfo> getUserInfoList();
 
-	int insertUser(UserInfo userInfo);
+//	UserInfo insertUserEntity(UserInfo userInfo);
 }
